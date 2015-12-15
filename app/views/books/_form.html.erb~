@@ -1,7 +1,19 @@
 <%= form_for @book do |f| %>
  
   
- 
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@book.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @book.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <p>
     <%= f.label :TITLE ,:class=>'fish'%><br>
     <%= f.text_field :title %>
@@ -10,7 +22,7 @@
     <%= f.label :CATEGORY,:class=>'fish' %><br>
     <%= f.date_field :return,:placeholder => "yy-mm-dd" %>
   </p>
- 
+ <%= f.select :Category, options_for_select([['REGULAR BOOKS',regular books] , ['FICTION', fiction] ,['NOVEL', novel]]) %>
   <p class='actions'>
     <%= f.submit %>
   </p>

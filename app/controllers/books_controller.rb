@@ -2,6 +2,12 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    @regularbooks=Book.where(Category: '1')
+    @regularbooksnumber=@regularbooks.count
+       @fictionbooks=Book.where(Category: '2')
+       @fictionbooksnumber=@fictionbooks.count
+       @novels=Book.where(Category: '3')
+       @novelsnumber=@novels.count
     
   end
  
@@ -20,10 +26,11 @@ class BooksController < ApplicationController
   end
  
   def create
+    
     @book = Book.new(article_params)
  
     if @book.save
-      redirect_to @book
+      redirect_to books_path
     else
       render 'new'
     end
@@ -40,7 +47,12 @@ class BooksController < ApplicationController
   end
  def invoice
     @books = Book.all
-    
+    @regularbooks=Book.where(Category: '1')
+    @regularbooksnumber=@regularbooks.count
+       @fictionbooks=Book.where(Category: '2')
+       @fictionbooksnumber=@fictionbooks.count
+       @novels=Book.where(Category: '3')
+       @novelsnumber=@novels.count
     end
  
  
@@ -54,7 +66,7 @@ class BooksController < ApplicationController
  
   private
     def article_params
-      params.require(:book).permit(:title, :return)
+      params.require(:book).permit(:title, :return,:Category)
     end
 end
 

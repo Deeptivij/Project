@@ -22,7 +22,7 @@
     <%= f.label :CATEGORY,:class=>'fish' %><br>
     <%= f.date_field :return,:placeholder => "yy-mm-dd" %>
   </p>
- 
+ <%= f.select :Category, options_for_select([['REGULAR BOOKS',1] , ['FICTION', 2] ,['NOVEL', 3]]) %>
   <p class='actions'>
     <%= f.submit %>
   </p>

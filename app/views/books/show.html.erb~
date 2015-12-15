@@ -10,5 +10,5 @@
 
 <p>
 <strong>YOU HAVE ISSUES THE BOOK FOR:</strong>
-<%=@k%>
+<%=@k%>DAYS
 </p>

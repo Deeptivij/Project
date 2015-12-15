@@ -2,50 +2,59 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    
   end
  
   def show
-    @article = Article.find(params[:id])
+    @book = Book.find(params[:id])
+    @s=@book.return.to_date-@book.created_at.to_date
+    @k=@s.to_i
   end
  
   def new
-    @article = Article.new
+    @book = Book.new
   end
  
   def edit
-    @article = Article.find(params[:id])
+    @book = Book.find(params[:id])
   end
  
   def create
-    @article = Article.new(article_params)
+    @book = Book.new(article_params)
  
-    if @article.save
-      redirect_to @article
+    if @book.save
+      redirect_to @book
     else
       render 'new'
     end
   end
  
   def update
-    @article = Article.find(params[:id])
+    @book = Book.find(params[:id])
  
-    if @article.update(article_params)
-      redirect_to @article
+    if @book.update(article_params)
+      redirect_to @book
     else
       render 'edit'
     end
   end
+ def invoice
+    @books = Book.all
+    
+    end
+ 
+ 
  
   def destroy
-    @article = Article.find(params[:id])
-    @article.destroy
+    @book = Book.find(params[:id])
+    @book.destroy
  
-    redirect_to articles_path
+    redirect_to books_path
   end
  
   private
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:book).permit(:title, :return,:category)
     end
 end
 
