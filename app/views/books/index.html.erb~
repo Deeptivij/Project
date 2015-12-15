@@ -1,5 +1,5 @@
 
-<h1>Bookstore invoice story1</h1>
+<h1>Bookstore invoice story1</h1><%=link_to 'link to solution story invoice',invoice_books_path%>
  <strong>Invoice for-:</strong><%=current_user.email%> <%=link_to 'New book issue',new_book_path%>
 <%@a=0%>
 <%@b=0%>
@@ -43,7 +43,7 @@
     
   </tr>
 <br><br><br><Br><br>
-<h1>Bookstore invoice story1</h1>
+<h1>Bookstore invoice story2</h1>
  <strong>Invoice for-:</strong><%=current_user.email%> <%=link_to 'New book issue',new_book_path%>
 
   <% @regularbooks.each do |article|%>

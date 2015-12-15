@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 resources:books do
 get 'invoice', on: :collection
+get 'story3', on: :collection
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
