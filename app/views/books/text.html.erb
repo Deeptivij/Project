@@ -1,0 +1,56 @@
+<body>
+<div id='fishh1'>
+	<p class='fish'>THE NOMADIC</p>
+	</div>
+	<div style="float:right;width:90px;">
+		<div id='fishh2'>
+			
+			</div>
+		</div>
+
+<%= @article.text %>
+<table>
+	<tr><td></td></tr>
+</table><br>
+	<%= button_to 'Edit Text', edit_article_path(@article),method: :get,:class=>'df1'%>
+	<%= button_to 'Back', articles_path,method: :get,:class=>'df1' %>
+	</body>
+<style>
+body{
+    background-image: url("/assets/images406.jpeg");
+   background-size: 1400px 750px;
+   
+} 
+.df1 {
+    position: relative;
+    padding: 1px 1px;
+    margin: 35px 6px 10px 0px;
+    float: left;
+    border-radius: 10px;
+    font-family: 'Helvetica', cursive;
+    font-size: 25px;
+    color: #FFF;
+    text-decoration: none;  
+    background-color: #3498DB;
+    border-bottom: 5px solid #2980B9;
+    text-shadow: 0px -2px #2980B9;
+    /* Animation */
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+}
+
+.df1:hover, 
+.df1:focus {
+    text-decoration: none;
+    color: #fff;
+}
+.fish {
+  font: 400 40px/1.5 'Pacifico', Helvetica, sans-serif;
+  color: #2b2b2b;
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+#fishh1{background-color:  	#FF4500;height:70px;
+    width:1290px;}
+    #fishh2{background-color:  	#FF4500;height:1000px;
+    width:100px;}
+</style>
