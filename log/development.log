@@ -8148,3 +8148,401 @@ Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4
 
 
 Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-15 16:56:30 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-16 10:06:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-12-16 10:06:27 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (67.5ms)
+Completed 200 OK in 502ms (Views: 488.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-12-16 10:06:39 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"It8FaWllR1nAn5Sbf7+ABE/qZz/73bRJccsyG5UBUJKav0MTaqZLuIEJSzJB0LeKHktxlgCjBNHnoQdQ2k4rzg==", "user"=>{"email"=>"manivij94@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "manivij94@gmail.com"]]
+Completed 401 Unauthorized in 345ms (ActiveRecord: 0.3ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"It8FaWllR1nAn5Sbf7+ABE/qZz/73bRJccsyG5UBUJKav0MTaqZLuIEJSzJB0LeKHktxlgCjBNHnoQdQ2k4rzg==", "user"=>{"email"=>"manivij94@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.3ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 116ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-12-16 10:06:44 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/devise-3.5.2/app/views/devise/registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-12-16 10:07:00 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SVE9PuJAZfeXk+2cHPPNcamruI0MactcqmmNCdV1xxvxMXtE4YNpFtYFMjUinPr/+AquJPcXe8Q8A7hCmjq8Rw==", "user"=>{"email"=>"deepti.enbake@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'deepti.enbake@gmail.com' LIMIT 1
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "deepti.enbake@gmail.com"], ["encrypted_password", "$2a$10$nruYrmrhI1jlTdUyJ8LWnO146o33pNV8vklN7qcgT7gkLhT6V4c2W"], ["created_at", "2015-12-16 04:37:00.793221"], ["updated_at", "2015-12-16 04:37:00.793221"]]
+  [1m[35m (88.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-12-16 04:37:00.891574"], ["current_sign_in_at", "2015-12-16 04:37:00.891574"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-12-16 04:37:00.892403"], ["id", 2]]
+  [1m[36m (81.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 398ms (ActiveRecord: 176.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-16 10:07:01 +0530
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books"
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (58.2ms)
+Completed 200 OK in 121ms (Views: 104.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/books/invoice" for 127.0.0.1 at 2015-12-16 11:57:39 +0530
+Processing by BooksController#invoice as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books"
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  Rendered books/invoice.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 78ms (Views: 74.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-16 11:57:49 +0530
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books"
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 48ms (Views: 44.1ms | ActiveRecord: 0.9ms)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-18 10:38:10 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-12-18 10:38:10 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/devise-3.5.2/app/views/devise/sessions/new.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 449ms (Views: 430.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-12-18 10:38:23 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lOhlHP4hUXkmStZ55o88L/wXh60ee6V5Bck0SRdLMGGjQ7pd3xaBX95tCtn5t57AF61AreJSWr1/2q74DovjNA==", "user"=>{"email"=>"manivij94@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "manivij94@gmail.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (10.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2015-12-18 05:08:24.026680"], ["sign_in_count", 2], ["updated_at", "2015-12-18 05:08:24.027809"], ["id", 1]]
+  [1m[36m (96.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 523ms (ActiveRecord: 106.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-18 10:38:24 +0530
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books"
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 62ms (Views: 38.5ms | ActiveRecord: 1.6ms)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books"  ORDER BY "books"."id" DESC LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-18 10:41:56 +0530
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms)
+
+NameError (uninitialized constant BooksController::Current_user):
+  app/controllers/books_controller.rb:4:in `index'
+
+
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.8ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/deepti/.rvm/gems/ruby-2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (43.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-18 10:42:18 +0530
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 83ms (Views: 38.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-18 10:42:18 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-18 10:42:18 +0530
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-18 10:42:18 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-18 10:42:18 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-18 10:42:18 +0530
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-18 10:42:18 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-18 10:42:18 +0530
+
+
+Started GET "/books" for 127.0.0.1 at 2015-12-18 10:42:41 +0530
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 39ms (Views: 34.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-12-18 10:43:15 +0530
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 59ms (Views: 39.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-18 10:43:15 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-18 10:43:16 +0530
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-18 10:43:16 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-18 10:43:16 +0530
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-18 10:43:16 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-18 10:43:16 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-18 10:43:16 +0530
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-12-18 10:43:29 +0530
+Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered books/_form.html.erb (12.9ms)
+  Rendered books/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-12-18 10:44:04 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SkmoO6rx+9+l16fkt+6zjmQ19s249qIt8QzSZ5ZeBJPMUOx9WIcGuKSja4aZIBOL87W7Z19//aZNLmI3zz2R/w==", "book"=>{"title"=>"bride and prejudice", "return"=>"2015-12-26", "Category"=>"3"}, "commit"=>"Create Book"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "books" ("title", "return", "Category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "bride and prejudice"], ["return", "2015-12-26"], ["Category", "3"], ["created_at", "2015-12-18 05:14:04.905907"], ["updated_at", "2015-12-18 05:14:04.905907"]]
+  [1m[36m (222.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 228ms (ActiveRecord: 223.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-12-18 10:44:05 +0530
+Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books"
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "1"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "2"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-12-18 10:44:39 +0530
+Processing by BooksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered books/_form.html.erb (2.0ms)
+  Rendered books/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-12-18 10:45:12 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dRxI8SzwDTAVxN1hDpohA40GzpUxZmdtjTtXYtpKx4zzBQy33obwVxSwEQMgVIEGGoaDP9bvOOYxGecygylS4A==", "book"=>{"title"=>"3mistakes ", "return"=>"2015-12-20", "Category"=>"1"}, "commit"=>"Create Book"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "return", "Category", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "3mistakes "], ["return", "2015-12-20"], ["Category", "1"], ["created_at", "2015-12-18 05:15:12.832631"], ["updated_at", "2015-12-18 05:15:12.832631"]]
+  [1m[35m (317.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/books
+Completed 302 Found in 323ms (ActiveRecord: 317.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-12-18 10:45:13 +0530
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 50ms (Views: 45.9ms | ActiveRecord: 1.3ms)
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."return" = ?[0m  [["return", "\#{Date.today}"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."return" = ?  [["return", "2015-12-18"]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."created_at" = ?[0m  [["created_at", "2015-12-18"]]
+
+
+Started GET "/books" for 127.0.0.1 at 2015-12-18 11:15:45 +0530
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-18 11:15:45 +0530
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-18 11:15:45 +0530
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-18 11:15:45 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-18 11:15:45 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-18 11:15:45 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-18 11:15:45 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-18 11:15:45 +0530
+
+
+Started GET "/books" for 127.0.0.1 at 2015-12-18 11:16:51 +0530
+Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "1"]]
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."Category" = ?[0m  [["Category", "2"]]
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."Category" = ?  [["Category", "3"]]
+  Rendered books/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 56ms (Views: 49.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-12-18 11:16:51 +0530
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-18 11:16:51 +0530
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-18 11:16:51 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-18 11:16:51 +0530
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-12-18 11:16:51 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-18 11:16:51 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-12-18 11:16:51 +0530
