@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
   def index
+    
     @books = Book.all
     @regularbooks=Book.where(Category: '1')
     @regularbooksnumber=@regularbooks.count
@@ -8,7 +9,7 @@ class BooksController < ApplicationController
        @fictionbooksnumber=@fictionbooks.count
        @novels=Book.where(Category: '3')
        @novelsnumber=@novels.count
-    
+     
   end
  
   def show

@@ -1,7 +1,7 @@
-
-<h1>Bookstore invoice story1</h1><%=link_to 'link to solution story invoice',invoice_books_path%>
-
-<h1>Bookstore invoice</h1>
+<%=@test%>
+<h1>Bookstore invoice story1</h1><%=link_to 'link to solution story invoice',invoice_books_path%><br><br>
+<%=link_to 'add new book',new_book_path%>
+<h1>Bookstore invoice story1</h1>
  <strong>Invoice for-:</strong><%=current_user.email%> <%=link_to 'back',books_path%>
 <%@a=0%>
 <%@b=0%>
@@ -10,6 +10,11 @@
 <%@p=0%>
 <%@y2=0%>
 <%@g=0%>
+<%@qq=0%>
+<%@rd=0%>
+<%@fd=0%>
+<%@nd=0%>
+<%@trent=0%>
 <table>
   <tr>
 <th>Issue date</th>
@@ -26,16 +31,13 @@
       <td><%= article.title %><td>
        <td><%= article.return %></td>
 
-<%@s=article.return.to_date-article.created_at.to_date%>
-  <td><%= @k=@s.to_i%>Days</td>
-
+ <td><%= calculate_days(article) %>Days</td>
       </tr>
+<%@aa=books(article)%>
 
-<%@a=@a+@k%>
-<%@a*1%>
   <% end %>
-<tr><td>Total Calculation</td><td></td><td></td><td></td><td></td><td><%=@a%>*1=<%=@a%>RS</td></tr>
-<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@a%>RS</td></tr></table><br><br><br><br>
+
+<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@aa%>RS</td></tr></table><br><br><br><br>
 <h1>Bookstore invoice for story2</h1><%=link_to 'story3',story3_books_path%>
  <strong>Invoice for-:</strong><%=current_user.email%> <%=link_to 'back',books_path%>
 <table>
@@ -58,17 +60,13 @@
        <td><%= article.return %></td>
 
 <td><%= article.created_at %></td>
-<%@r=article.return.to_date-article.created_at.to_date%>
-  <td><%= @m=@r.to_i%>Days</td>
-
-      </tr>
-
-<%@b=@b+@m%>
-<%@b*1.5%>
+<td><%=calculate_days(article)%><td>
+  <%@b=all_books(article)%>
   <% end %>
-<tr><td>Total Calculation</td><td></td><td></td><td></td><td></td><td><%=@b%>*1.5=<%=@b*1.5%>RS</td></tr>
+  <tr><td>Total rental points awarded=<%=@regularbooksnumber%></td>
+<tr><td>Total Calculation</td><td></td><td></td><td></td><td></td><td><%=@b %>RS</td></tr>
 <tr><td>Total books</td><td></td><td></td><td></td><td></td><td><%=@regularbooksnumber%></td></tr></table>
-<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@b*1.5%>RS</td></tr></table>
+<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@b%>RS</td></tr></table>
 <br><br><br>
 <table>
   <tr><th>Book Type</th>
@@ -90,17 +88,16 @@
        <td><%= article.return %></td>
 
 <td><%= article.created_at %></td>
-<%@q=article.return.to_date-article.created_at.to_date%>
-  <td><%= @l=@q.to_i%>Days</td>
+<td><%=calculate_days(article)%></td>
+  
 
       </tr>
-
-<%@c=@c+@l%>
-<%@c*3%>
+<%@c=all_books(article)%>
   <% end %>
-<tr><td>Total Calculation</td><td></td><td></td><td></td><td></td><td><%=@c%>*3=<%=@c*3%>RS</td></tr>
+  <tr><td>Total rental points awarded=<%=@fictionbooksnumber%></td>
+<tr><td>Total Calculation</td><td></td><td></td><td></td><td></td><td><%=@c%>RS</td></tr>
 <tr><td>Total books</td><td></td><td></td><td></td><td></td><td><%=@fictionbooksnumber%></td></tr></table>
-<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@c*3%>RS</td></tr></table>
+<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@c%>RS</td></tr></table>
 <br><br><br>
 <table>
   <tr><th>Book Type</th>
@@ -114,8 +111,8 @@
     
   </tr>
 
-
-
+<strong>TOTAL RENTAL FOR REGULAR AND FICTION=  <%=@rent=rental_points%></strong>
+<br><br>
   <% @novels.each do |article|%>
   
     <tr>
@@ -125,19 +122,20 @@
 
 <td><%= article.created_at %></td>
 
-<%@z=article.return.to_date-article.created_at.to_date%>
-  <td><%= @v=@z.to_i%>Days</td>
+<td><%=calculate_days(article)%></td>
+  
 
       </tr>
+      <%@se=all_books(article)%>
 
-<%@d=@d+@v%>
-<%@d*1.5%>
+<%@rent=novel_points(article)%>
   <% end %>
-<tr><td>Total Calculation</td><td></td><td></td><td></td><td></td><td><%=@d%>*1.5=<%=@d*1.5%>RS</td></tr>
+<tr><td>Total Calculation</td><td></td><td></td><td></td><td></td><td><%=@se%>RS</td></tr>
 <tr><td>Total books</td><td></td><td></td><td></td><td></td><td><%=@novelsnumber%></td></tr></table>
-<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@d*1.5%>RS</td></tr></table>
+<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@se%>RS</td></tr></table>
 <br><br><br>
-<strong>Total amount for <%=@regularbooksnumber+@fictionbooksnumber+@novelsnumber%>books =<%=@d*1.5+@c*3+@b*1.5%>/-</strong><br>
+<strong>TOTAL RENTAL FOR NOVEL=  <%=@rent%></strong>
+<br><br>
 <br>
 <br><br><br><br><h1>Bookstore invoice for story3</h1>
  <strong>Invoice for-:</strong><%=current_user.email%> <%=link_to 'back',books_path%>
@@ -153,7 +151,6 @@
   </tr>
 
 
-
   <% @regularbooks.each do |article|%>
   
     <tr><td>REGULAR BOOKS</td>
@@ -161,20 +158,16 @@
        <td><%= article.return %></td>
 
 <td><%= article.created_at %></td>
-<%@r=article.return.to_date-article.created_at.to_date%>
-  <td><%= @j=@r.to_i%>Days</td>
+
+  <td><%= calculate_days(article)%>Days</td>
 
       </tr>
-<%if @j==1%>
-<%@u=@j*2%>
-<%elsif @j>=2%>
-<%@g=@g+2*1%>
-<%@p=@p+(@j-2)%>
+<%@rb=regular_books(article)%>
 <%end%>
-<%end%>
-<tr><td>Total Calculation</td><td></td><td></td><td></td><td></td><td><%=@u%>+<%=@g%>+<%=@p%>*1.5=<%=@u+@g+@p*1.5%>RS</td></tr>
+<tr><td>Total rental points awarded=<%=@regularbooksnumber%></td>
+<tr><td>Total Calculation</td><td></td><td></td><td></td><td></td><td><%=@g+@p+@u%>RS</td></tr>
 <tr><td>Total books</td><td></td><td></td><td></td><td></td><td><%=@regularbooksnumber%></td></tr></table>
-<tr><td>Total amount</td><td></td><td></td><td></td><td></td><td><%=@u+@g+@p*1.5%>RS</td></tr></table>
+<tr><td>Total amount</td><td></td><td></td><td></td><td></td><td><%=@g+@p+@u%>RS</td></tr></table>
 <br><br><br><br><br>
 <table>
   <tr><th>Book Type</th>
@@ -199,21 +192,15 @@
 
 <td><%= article.created_at %></td>
 
-<%@z=article.return.to_date-article.created_at.to_date%>
-  <td><%= @v=@z.to_i%>Days</td>
-
+<td><%=calculate_days(article)%></td>
+  
       </tr>
-<%if @v==1%>
-<%@y=@v*4.5%>
-<%elsif @v==2%>
-<%@y1=@v*4.5%>
-<%elsif @v>=3%>
-<%@y2=@y2+@v%>
-<%@y2*1.5%><%end%>
+      <%@nb=regular_books(article)%>
+
   <% end %>
 
 <tr><td>Total books</td><td></td><td></td><td></td><td></td><td><%=@novelsnumber%></td></tr></table>
-<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@y1+@y+@y2*1.5%>RS</td></tr></table>
+<tr><td>Total amount     </td><td></td><td></td><td></td><td></td><td><%=@y1+@y+@y2%>RS</td></tr></table>
 <br><br><br>
 <style>
 table, td, th {
